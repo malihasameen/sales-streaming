@@ -66,7 +66,7 @@ service docker restart
 ```
 
 ## Architecture
-[](/images/sales-streaming-architecture.png)
+![](/images/sales-streaming-architecture.png)
 
 All applications in this project are containerized into **Docker** containers to easily setup the environment for end to end streaming data pipeline.
 
