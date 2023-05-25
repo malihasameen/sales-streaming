@@ -17,6 +17,7 @@ wsl --install
   - [Serving Database Layer](#serving-database-layer)
   - [Visualization Layer](#visualization-layer)
 - [FastAPI based Ingestion](#fastapi-based-ingestion)
+- [Dashboard](#dashboard)
 - [Potential Improvements](#potential-improvements)
 
 ## Install Docker and Docker Compose with WSL2
@@ -89,7 +90,8 @@ Messages from FastAPI based Python application are consumed by kafka broker whic
 ### Stream Processing Layer
 A spark application called `spark-streaming` is submitted to spark cluster manager along with the required jars. This application connects to Kafka broker to retrieve messages from *Order* topic, transforms them using Spark Structured Streaming and loads them into Cassandra and Mysql tables. The first query transforms data into format accepted by cassandra table and second query aggregates this data to load into mysql.
 
-**Spark Jars**
+**Spark Jars:**
+
 Following are the spark jars required for stream processing:
 - commons-pool2-2.11.1.jar
 - kafka-clients-3.4.0.jar
@@ -110,6 +112,9 @@ The `superset` service launches the superset instance. Superset connects to MySQ
 
 ## FastAPI based Ingestion
 ![](/images/fastapiproducer.png)
+
+## Dashboard
+![](/images/dashboard.gif)
 
 ## Potential Improvements
 There is definitely some room for improvement in this streaming data pipeline.
