@@ -16,6 +16,7 @@ wsl --install
   - [Stream Processing Layer](#stream-processing-layer)
   - [Serving Database Layer](#serving-database-layer)
   - [Visualization Layer](#visualization-layer)
+- [FastAPI based Ingestion](#fastapi-based-ingestion)
 - [Potential Improvements](#potential-improvements)
 
 ## Install Docker and Docker Compose with WSL2
@@ -106,6 +107,9 @@ A cassandra database stores and persists raw data and mysql database stores the 
 
 ### Visualization Layer
 The `superset` service launches the superset instance. Superset connects to MySQL database and visualizes sales data to users. The dashboard is refreshed every 10 seconds.
+
+## FastAPI based Ingestion
+![](/images/fastapiproducer.png)
 
 ## Potential Improvements
 There is definitely some room for improvement in this streaming data pipeline.
