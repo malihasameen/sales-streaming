@@ -1,0 +1,5 @@
+FROM python:3.9
+
+RUN pip install --no-cache-dir --upgrade requests
+
+CMD [ "python3", "/scripts/create_dashboard.py"]

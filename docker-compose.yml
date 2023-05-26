@@ -164,4 +164,24 @@ services:
       datapipeline:
         ipv4_address: 172.18.0.11
 
+  superset-create-dashboard:
+    build:
+      context: ./superset/dashboard
+      dockerfile: dockerfile
+    container_name: superset-create-dashboard
+    depends_on:
+      superset:
+        condition: service_started
+      kafka-create-topic:
+        condition: service_completed_successfully
+      cassandra-create-ks-topic:
+        condition: service_completed_successfully
+      mysql:
+        condition: service_started
+    volumes:
+      - ./superset/dashboard/scripts:/scripts
+    networks:
+      datapipeline:
+        ipv4_address: 172.18.0.12
+
    

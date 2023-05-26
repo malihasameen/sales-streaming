@@ -78,3 +78,5 @@ total_sales_chart = client.create_chart(
     slice_name="Source, State by Amount",
     viz_type="dist_bar"
 )
+
+print("Superset Dashboard created successfully...")
